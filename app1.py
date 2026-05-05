@@ -8,8 +8,6 @@ from src.workflows.info_mode import run_info_mode
 from src.workflows.comparison import compare_policies
 from src.workflows.langgraph_flow import build_graph
 
-
-# ------------------ PAGE CONFIG ------------------
 st.set_page_config(
     page_title="Policy Intelligence System",
     layout="wide",
@@ -128,7 +126,7 @@ with tab1:
             </div>
             """, unsafe_allow_html=True)
 
-    # -------- POLICIES GRID --------
+    
     st.markdown("##  Available Policies")
 
     cols = st.columns(3)
@@ -205,7 +203,6 @@ with tab2:
                 </div>
                 """, unsafe_allow_html=True)
 
-            # -------- SUMMARY --------
             eligible_count = sum(1 for i in result["final"] if i["eligible"])
 
             st.markdown(f"""

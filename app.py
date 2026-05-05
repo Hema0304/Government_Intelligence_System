@@ -9,13 +9,11 @@ from src.workflows.comparison import compare_policies
 from src.workflows.langgraph_flow import build_graph
 
 
-# ------------------ PAGE CONFIG ------------------
 st.set_page_config(
     page_title="Policy Intelligence System",
     layout="wide",
 )
 
-# ------------------ CUSTOM CSS ------------------
 st.markdown("""
 <style>
 #MainMenu {visibility: hidden;}
@@ -53,17 +51,14 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
-
-# ------------------ HEADER ------------------
+-
 st.markdown('<div class="main-title">Policy Decision Intelligence System</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-text">Understand • Evaluate • Decide Government Schemes</div>', unsafe_allow_html=True)
 
 
-# ------------------ LOAD DATA ------------------
 policies = load_policies()
 graph = build_graph()
 
-# ------------------ SIDEBAR ------------------
 st.sidebar.title("Navigation")
 
 mode = st.sidebar.radio(
@@ -74,9 +69,6 @@ mode = st.sidebar.radio(
 st.sidebar.markdown("---")
 st.sidebar.info("AI-powered decision system")
 
-# =========================================================
-# 🔹 MODE 1: EXPLORE POLICIES
-# =========================================================
 if mode == "Explore Policies":
     st.markdown("## Explore Policies")
 
@@ -94,7 +86,6 @@ if mode == "Explore Policies":
                 except Exception as e:
                     st.error(f"Error: {e}")
 
-    # -------- Available Policies --------
     st.markdown("## Available Policies")
 
     cols = st.columns(3)
@@ -109,7 +100,6 @@ if mode == "Explore Policies":
             </div>
             """, unsafe_allow_html=True)
 
-    # -------- Comparison --------
     st.markdown("## Compare Policies")
 
     selected = st.multiselect(
@@ -123,10 +113,6 @@ if mode == "Explore Policies":
         else:
             comparison = compare_policies(policies, selected)
             st.table(comparison)
-
-# =========================================================
-# 🔹 MODE 2: CHECK ELIGIBILITY (LANGGRAPH SAFE)
-# =========================================================
 elif mode == "Check Eligibility":
     st.markdown("## Check Eligibility")
 
@@ -153,7 +139,6 @@ elif mode == "Check Eligibility":
                 st.error(f"Graph crashed: {e}")
                 st.stop()
 
-        # -------- SAFETY CHECKS --------
         if result is None:
             st.error("Graph returned None. Check workflow.")
             st.stop()
@@ -163,7 +148,7 @@ elif mode == "Check Eligibility":
             st.write("DEBUG:", result)
             st.stop()
 
-        # -------- DISPLAY --------
+        
         st.markdown("##  Results")
 
         for item in result["final"]:
@@ -178,6 +163,5 @@ elif mode == "Check Eligibility":
             </div>
             """, unsafe_allow_html=True)
 
-# ------------------ FOOTER ------------------
 st.markdown("---")
 st.caption("Built using LangGraph + RAG + Rule-based AI")
