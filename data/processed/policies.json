@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Pradhan Mantri Awas Yojana",
+    "category": "Housing",
+    "eligibility": {
+      "income_max": 600000,
+      "age_min": 18
+    },
+    "benefits": "Subsidy on home loans",
+    "target": "Low income families",
+    "documents": ["Aadhar", "Income Certificate"],
+    "last_updated": "2026-01"
+  },
+  {
+    "name": "Pradhan Mantri Mudra Yojana",
+    "category": "Loan",
+    "eligibility": {
+      "income_max": 1000000,
+      "age_min": 18
+    },
+    "benefits": "Business loans up to 10 lakh",
+    "target": "Small business owners",
+    "documents": ["Aadhar", "Business proof"],
+    "last_updated": "2026-01"
+  },
+  {
+    "name": "PM Kisan Samman Nidhi",
+    "category": "Agriculture",
+    "eligibility": {
+      "income_max": 800000,
+      "age_min": 18
+    },
+    "benefits": "Rs.6000 yearly support",
+    "target": "Farmers",
+    "documents": ["Land records"],
+    "last_updated": "2026-01"
+  },
+  {
+  "name": "National Scholarship Portal",
+  "category": "Education",
+  "eligibility": {
+    "income_max": 800000,
+    "age_min": 18
+  },
+  "benefits": "Financial support for students",
+  "target": "Students",
+  "documents": ["Aadhar", "Academic records"],
+  "last_updated": "2026-01"
+},
+{
+  "name": "Beti Bachao Beti Padhao",
+  "category": "Women",
+  "eligibility": {
+    "income_max": 800000,
+    "age_min": 0
+  },
+  "benefits": "Support for girl child education and welfare",
+  "target": "Girl children and families",
+  "documents": ["Birth certificate"],
+  "last_updated": "2026-01"
+},
+{
+  "name": "Ayushman Bharat Yojana",
+  "category": "Health",
+  "eligibility": {
+    "income_max": 500000,
+    "age_min": 18
+  },
+  "benefits": "Free health insurance coverage",
+  "target": "Low income families",
+  "documents": ["Aadhar", "Income proof"],
+  "last_updated": "2026-01"
+}
+]
