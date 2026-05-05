@@ -9,3 +9,4 @@ pydantic
 python-dotenv
 langchain-community
 groq
+langchain-groq
