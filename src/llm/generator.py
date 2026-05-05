@@ -9,7 +9,7 @@ client = ChatGroq(
     api_key=st.secrets["GROQ_API_KEY"]
 )
 def generate_response(prompt):
-    return llm.invoke(prompt).content
+    return client.invoke(prompt).content
 
 # def generate_response(prompt):
 #     response = client.chat.completions.create(
