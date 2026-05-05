@@ -2,7 +2,7 @@
 import os
 from langchain_groq import ChatGroq   
 #Groq model
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = ChatGroq(api_key=os.getenv("GROQ_API_KEY"))
 def generate_response(prompt):
     response = client.chat.completions.create(
         model = "llama-3.1-8b-instant",
