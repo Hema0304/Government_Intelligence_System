@@ -2,7 +2,13 @@
 import os
 from langchain_groq import ChatGroq   
 #Groq model
-client = ChatGroq(api_key=os.getenv("GROQ_API_KEY"))
+import streamlit as st
+from langchain_groq import ChatGroq
+
+client = ChatGroq(
+    model="llama-3.1-8b-instant",
+    api_key=st.secrets["GROQ_API_KEY"]
+)
 def generate_response(prompt):
     response = client.chat.completions.create(
         model = "llama-3.1-8b-instant",
