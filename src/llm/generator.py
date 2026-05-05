@@ -1,6 +1,6 @@
 
 import os
-from groq import Groq
+from langchain_groq import ChatGroq   
 #Groq model
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 def generate_response(prompt):
