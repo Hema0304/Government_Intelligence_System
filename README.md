@@ -7,6 +7,8 @@ Enables users to query policy documents and receive context-aware, accurate resp
 ##  Live Demo
 [Live Demo](https://governmentintelligencesystem-edud4yffz7qfkb937gd425.streamlit.app/)
 
+![Screenshot](screenshot1.png)
+
 
 ## Problem Statement
 
@@ -16,13 +18,15 @@ This system simplifies access by enabling users to ask natural language question
 
 ##  Features
 
--  Document ingestion and processing (PDFs)
 -  Semantic search using embeddings
 -  Context-aware question answering using LLMs
 -  Faster and more relevant results than keyword-based search
 -  Interactive UI built with Streamlit
 
 
+![Screenshot](screenshot2.png)
+
+![Screenshot](screenshot3.png)
 
 ##  Tech Stack
 
@@ -37,18 +41,18 @@ This system simplifies access by enabling users to ask natural language question
 
 ##  System Architecture
 
-1. Load policy documents (PDFs)
-2. Split text into chunks
-3. Generate embeddings
-4. Store embeddings in FAISS vector database
-5. Retrieve relevant chunks based on user query
-6. Generate final response using LLM
+1. Load structured policy data from JSON files  
+2. Parse and normalize fields (name, eligibility, benefits, etc.)  
+3. Convert relevant fields into text representations  
+4. Generate embeddings for each policy entry  
+5. Store embeddings in FAISS vector database  
+6. Retrieve relevant policies based on user query  
+7. Generate final response using LLM with retrieved context  
 
-
+![Screenshot](screenshot4.png)
 
 ##  Project Highlights
 
-- Processed **50+ policy documents**
 - Built modular pipeline for ingestion, retrieval, and response generation
 - Improved retrieval relevance compared to keyword-based search
 - Tested across diverse user queries
